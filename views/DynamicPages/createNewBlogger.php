@@ -9,6 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
+    <header>
     <style>
         body,h1,h2,h3,h4,h5 {font-family: 'Montserrat', sans-serif;
         }
@@ -22,22 +23,22 @@
             padding: 30px;
             padding-top: 60px;
         }
-        .login{
+/*        .login{
             text-align: left; 
-        }
+        }*/
 
         /*        body, html {
                     height: 200%;
                     text-align: centre;
                 }*/
 
-        * {
+/*        * {
             box-sizing: border-box;
-        }
+        }*/
         .bg-img {
             /* The image used */
             background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1727.jpg");
-            min-height: 900px;
+            min-height: 1200px;
 
             /* Center and scale the image nicely */
             background-position: center;
@@ -48,7 +49,7 @@
         }
 
         /* Add styles to the form container */
-        .container {
+        .newPostBox {
             position: absolute;
             right: 0;
             margin: 20px;
@@ -74,26 +75,27 @@
         }
 
         /* Set a style for the submit button */
-        .btn {
+        .button {
             background-color: #F0F3BD;
             color: white;
             padding: 15px 12px;
             border: none;
             cursor: pointer;
             width: 100%;
-            opacity: 0.9;
+            opacity: 5;
         }
 
-        .btn:hover {
+        .button:hover {
             opacity: 5;
-            background-color: #F0F3BD; 
+            background-color: #028090; 
         }
     </style>
+    </header>
     <body>
         <div class="navbar"></div>
         <div class="bg-img" style="background-image">
             <h1>Join the Advntr team...  </h1>
-            <div class="container">
+            <div class="newPostBox">
 
                 <form action="" method="POST" class="container" enctype="multipart/form-data">
                     <h2>Register with Advntr</h2>
@@ -122,7 +124,7 @@
                     <label for="Password"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="password" required>
 
-                    <button type="submit" class="btn" value="registerBlogger">Login</button>
+                    <button type="submit" class="button" value="registerBlogger">Submit</button>
                 </form>
             </div>
         </div>

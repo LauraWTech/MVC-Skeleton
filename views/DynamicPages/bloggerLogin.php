@@ -1,7 +1,7 @@
 <?php
 //login
 //connect to database
-//zinclude("connection.php");
+//include("connection.php");
 //set cookie and validate 
 if (isset($_COOKIE["type"])) {
     header("location: bloggerLogin.php");
@@ -56,12 +56,11 @@ if (!isset($_SESSION['attempts']))
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
+    <header>
     <style>
         body,h1,h2,h3,h4,h5 {font-family: 'Montserrat', sans-serif;
         }
-        .logo{
-            width: 20%;
-        }
+
         h1{
             text-align: centre; 
             color: black;
@@ -69,17 +68,17 @@ if (!isset($_SESSION['attempts']))
         .login{
             text-align: left; 
         }
-                .blogName{
+        .blogName{
             text-align: left; 
         }
-                .password{
+        .password{
             text-align: left; 
         }
 
-        body, html {
+/*        body, html {
             height: 200%;
             text-align: centre;
-        }
+        }*/
 
         body {
             box-sizing: border-box;
@@ -100,7 +99,7 @@ if (!isset($_SESSION['attempts']))
             position: absolute;
             right: 0;
             margin: 20px;
-            max-width: 300px;
+            width: 25px;
             padding: 12px;
             background-color: white;
             opacity: 0.9;
@@ -122,8 +121,8 @@ if (!isset($_SESSION['attempts']))
         }
 
         /* Set a style for the submit button */
-        .btn {
-            background-color: #F0F3BD;
+        .button {
+            background-color: #00A896;
             color: white;
             padding: 15px 12px;
             border: none;
@@ -132,29 +131,31 @@ if (!isset($_SESSION['attempts']))
             opacity: 0.9;
         }
 
-        .btn:hover {
+        .button:hover {
             opacity: 5;
             background-color: #F0F3BD; 
         }
     </style>
-</head>
+</header>
 <body>
-    <div class="navbar"></div>
+
     <div class="bg-img">
+        <div class="header">
         <h1>Start your Advntr now...</h1>
-<div class="container">
-        <form action="" method = "POST" class="container" enctype="multipart/form-data">
-            <h2 class="login">Login</h2>
+        </div>
+        <div class="container">
+            <form action="" method = "POST" class="container" enctype="multipart/form-data">
+                <h2 class="login">Login</h2>
 
-            <label for="Blog Name"><b>Blog Name</b></label>
-            <input type="text" placeholder="Enter Blog Name" name="blogName" required>
+                <label for="Blog Name"><b>Blog Name</b></label>
+                <input type="text" placeholder="Enter Blog Name" name="blogName" required>
 
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
 
-            <button type="submit" class="btn">Login</button>
-        </form>
-    </div>
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
 </body>
 </div>
 </html>
