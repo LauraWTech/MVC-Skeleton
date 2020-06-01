@@ -12,52 +12,57 @@
 
             /* Add a card effect for articles */
             .posts {
-                float: centre;
+                float: left;
                 background-color: white;
-                /*     width:70%; */
-                padding: 20px;
+                width:75%; 
+                padding: 40px;
                 margin-top: 20px;
                 image-orientation: centre;
+                overflow: auto;
             }
         </style>
 
-        <div class="container-fluid">
-            <div class="posts">
-                <!--                    <div class="leftcolumn">-->
-                <div class="posts">
-                    <?php
-                    foreach ($posts as $p) {
-                        ?>
-                        <h3><?php echo$p->title . PHP_EOL; ?></h3>
+        <div class="header">
+            <h1>All Advntr Posts</h1>
+        </div>
+        <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
 
-                        <?php echo$p->content . PHP_EOL; ?> 
-                        <?php
-                        if ($p->postImage !== NULL) {
-                            //$path = dirname(__DIR__) . "\\images\\"; 
-                            $path = __DIR__ . "/../../views/images/";
-                            //$path = __DIR__;
-                            //$pathArray = explode ('/', $path);
-                            //$length = count($pathArray);
+        <div class="posts">
+
+            <?php
+            foreach ($posts as $p) {
+                ?>
+                <h3><?php echo$p->title . PHP_EOL; ?></h3>
+
+                <?php echo$p->content . PHP_EOL; ?> 
+                <?php
+                if ($p->postImage !== NULL) {
+                    //$path = dirname(__DIR__) . "\\images\\"; 
+                    $path = __DIR__ . "/../../views/images/";
+                    //$path = __DIR__;
+                    //$pathArray = explode ('/', $path);
+                    //$length = count($pathArray);
 
 
-                            $file = $path . $p->postImage;
-                            //echo $file;
-                            if (file_exists($file)) {
-                                //need to use local path name to display images full name doesnt work
-                                $img = "<img src='views/images/$p->postImage' width='800' height = '600' />";   //added /../
-                                echo $img;
-                            } else {
-                                echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
-                            }
-                        }
-                        echo$p->publishedAt . PHP_EOL;
+                    $file = $path . $p->postImage;
+                    //echo $file;
+                    if (file_exists($file)) {
+                        //need to use local path name to display images full name doesnt work
+                        $img = "<img src='views/images/$p->postImage' width='800' height = '600' />";   //added /../
+                        echo $img;
+                    } else {
+                        echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
                     }
-                    ?>
-                    <!--&nbsp;-->
-                    <div class="img" style="height:200px;">Image</div>
-                    <!--                    </div>-->
-                </div>
+                }
+                echo$p->publishedAt . PHP_EOL;
+            }
+            ?>
+            &nbsp;
+            <div class="img">
+                <img class="img" alt="image" style="width:100%;"">
+                <!--                    </div>-->
             </div>
         </div>
+
     </body>
 </html>

@@ -137,12 +137,12 @@ if (!isset($_SESSION['attempts']))
         }
     </style>
 </header>
-<body>
 
     <div class="bg-img">
         <div class="header">
         <h1>Start your Advntr now...</h1>
         </div>
+        <body>
         <div class="container">
             <form action="" method = "POST" class="container" enctype="multipart/form-data">
                 <h2 class="login">Login</h2>
@@ -156,8 +156,10 @@ if (!isset($_SESSION['attempts']))
                 <button type="submit" class="button">Login</button>
             </form>
         </div>
-</body>
+
 </div>
+    </body>
+    <footer></footer>
 </html>
 
 

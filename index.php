@@ -47,10 +47,9 @@
             .header {
                 font-family: 'Josefin Sans', sans-serif;
                 padding-bottom: 100px;
-                padding-top:200px;
-                font-size: 100px;
+                padding-top:150px;
                 text-align: center;
-                font-size: 200px;
+                font-size: 50%;
                 /*                    background: white;*/
             }
 
@@ -132,6 +131,7 @@
             }
             /* Add a hover effect if you want */
             .fa:hover {
+                color: black;
                 opacity: 0.7;
             }
 
@@ -222,6 +222,7 @@
             </div>
  
         </div>
+        <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
            <div class="footer">
                 <h2>Follow Us</h2>
                 <!-- Add font awesome icons -->
