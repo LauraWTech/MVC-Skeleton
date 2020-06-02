@@ -41,7 +41,7 @@ Class BloggerController {
                   $bloggers = blogger::all();
                   $loggedin = blogger::findBlogger($bloggers);
                   createSessionData($loggedin);
-                  echo $loggedin->blogName . ' you are logged in';
+                  //echo $loggedin->blogName . ' you are logged in';
             //need to display readAllPosts but we need to figure out the database first      
           //       require_once('views/DynamicPages/readAllPosts.php');
                 }
@@ -61,6 +61,7 @@ Class BloggerController {
 public function logout() {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             if (isset($_SESSION['blogID'])) {
+                unset($_SESSION['blogID']);
                 unset($_SESSION['attempts']);
                 unset($_SESSION['intro']);
                 unset($_SESSION['blogName']);

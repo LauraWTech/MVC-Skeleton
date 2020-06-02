@@ -133,6 +133,7 @@ class blogger {
           $lastLogin = date("y-m-d H:i:s");
           $req->bindParam(':lastLogin', $lastLogin);
           $req->execute();
+          $_SESSION['lastLogin']=$lastLogin;
           return $blogger;
             //($blogger['blogID'], $blogger['blogName'], $blogger['firstName'], $blogger['lastName'], $blogger['email'], $blogger['phoneNumber'], $blogger['publishedAt'], $blogger['lastLogin'], $blogger['intro'], $blogger['aboutMe'], $blogger['passwordHASH']);
         } else {

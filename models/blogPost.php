@@ -139,8 +139,11 @@ class blogPost {
         $req->execute();
                    
         // we create a list of Product objects from the database results
-        foreach ($req->fetch() as $posts) {
-            $list[] = new blogPost($posts['postID'], $posts['blogID'], $posts['categoryID'], $posts['title'], $posts['publishedAt'], $posts['content'], $posts['postImage']);
+        $posts = $req->fetchAll();
+        if($posts){
+            foreach ($posts as $post) {
+                $list[] = new blogPost($post['postID'], $post['blogID'], $post['categoryID'], $post['title'], $post['publishedAt'], $post['content'], $post['postImage']);
+            }
         }
         return $list;
     }
