@@ -17,7 +17,7 @@
     <header class="topnav">
         <div class="form-inline">
 
-            <style>
+           <style>
 
                 .topnav {
                     /*overflow: hidden;*/
