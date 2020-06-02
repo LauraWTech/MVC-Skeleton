@@ -27,6 +27,7 @@
                     width: 100%;
                     position: fixed;
                     z-index: 10; 
+                    margin: 0 auto;
                 }
 
                 /* Links - change color on hover */
@@ -35,13 +36,13 @@
                     color: #00A896;
                 } 
                 .logo {
+                    float: right;
                     position: relative;
                     height:auto;
                     width:auto;
                     /*                    line-height: 30px;*/
                     max-height: 3%;
                     max-width: 3%;
-                    float: right;
                     padding: 0;
                 }
                 .h3 {
@@ -53,7 +54,12 @@
                     text-align: right;
                 }
                 .home{
-                    letter-spacing: 3px;
+                    letter-spacing: 5px;
+                    font-size: 20px;
+                    text-align: centre;
+                }
+                .img-fluid{
+                    float: right;
                 }
             </style>
 
@@ -98,7 +104,8 @@
                     .sidenav a {font-size: 18px;}
                 }
                 .hamburger{
-                    text-align: centre;
+                    text-align: left;
+                    float: left;
                     left:5px;
                     top: 5px;
                     bottom:5px;

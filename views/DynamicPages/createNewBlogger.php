@@ -10,86 +10,86 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
     <header>
-    <style>
-        body,h1,h2,h3,h4,h5 {font-family: 'Montserrat', sans-serif;
-        }
-        /*        .logo{
-                    width: 20%;
-                }*/
-        
-        h1{
-            text-align: centre;
-            color: white;
-            padding: 30px;
-            padding-top: 60px;
-        }
-/*        .login{
-            text-align: left; 
-        }*/
+        <style>
+            body,h1,h2,h3,h4,h5 {font-family: 'Montserrat', sans-serif;
+            }
+            /*        .logo{
+                        width: 20%;
+                    }*/
 
-        /*        body, html {
-                    height: 200%;
-                    text-align: centre;
-                }*/
+            h1{
+                text-align: centre;
+                color: white;
+                padding: 30px;
+                padding-top: 60px;
+            }
+            /*        .login{
+                        text-align: left; 
+                    }*/
 
-/*        * {
-            box-sizing: border-box;
-        }*/
-        .bg-img {
-            /* The image used */
-            background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1727.jpg");
-            min-height: 1200px;
+            /*        body, html {
+                        height: 200%;
+                        text-align: centre;
+                    }*/
 
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            max-width: 100%;
-        }
+            /*        * {
+                        box-sizing: border-box;
+                    }*/
+            .bg-img {
+                /* The image used */
+                background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1727.jpg");
+                min-height: 1200px;
 
-        /* Add styles to the form container */
-        .newPostBox {
-            position: absolute;
-            right: 0;
-            margin: 20px;
-            max-width: 300px;
-            padding: 0px;
-            background-color: white;
-            opacity: 0.9;
-            text-align: left;
-        }
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                max-width: 100%;
+            }
 
-        /* Full-width input fields */
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            border: none;
-            background: #f1f1f1;
-        }
+            /* Add styles to the form container */
+            .newPostBox {
+                position: absolute;
+                right: 0;
+                margin: 20px;
+                max-width: 700px;
+                padding: 15px;
+                background-color: white;
+                opacity: 0.9;
+                text-align: left;
+            }
 
-        input[type=text]:focus, input[type=password]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
+            /* Full-width input fields */
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                border: none;
+                background: #f1f1f1;
+            }
 
-        /* Set a style for the submit button */
-        .button {
-            background-color: #F0F3BD;
-            color: white;
-            padding: 15px 12px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            opacity: 5;
-        }
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
 
-        .button:hover {
-            opacity: 5;
-            background-color: #028090; 
-        }
-    </style>
+            /* Set a style for the submit button */
+            .button {
+                background-color: #F0F3BD;
+                color: white;
+                padding: 15px 12px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 5;
+            }
+
+            .button:hover {
+                opacity: 5;
+                background-color: #028090; 
+            }
+        </style>
     </header>
     <body>
         <div class="navbar"></div>

@@ -38,7 +38,6 @@ if (isset($_POST["login"])) {
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +61,7 @@ if (isset($_POST["login"])) {
                 text-align: centre; 
                 color: black;
             }
-            .login{
+            .login1{
                 text-align: left; 
             }
             .blogName{
@@ -77,27 +76,29 @@ if (isset($_POST["login"])) {
                         text-align: centre;
                     }*/
 
-            body {
-                box-sizing: border-box;
-            }
+            /*            body {
+                            box-sizing: border-box;
+                        }*/
 
             .bg-img {
                 /* The image used */
                 background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1772.jpg");
-                min-height: 700px;
+                min-height: 1200px;
+
                 /* Center and scale the image nicely */
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 position: relative;
+                max-width: 100%;
             }
             /* Add styles to the form container */
             .container {
                 position: absolute;
                 right: 0;
                 margin: 20px;
-                width: 25px;
-                padding: 12px;
+                max-width: 400px;
+                padding: 15px;
                 background-color: white;
                 opacity: 0.9;
                 text-align: left;
@@ -119,18 +120,18 @@ if (isset($_POST["login"])) {
 
             /* Set a style for the submit button */
             .button {
-                background-color: #00A896;
+                background-color: #F0F3BD;
                 color: white;
                 padding: 15px 12px;
                 border: none;
                 cursor: pointer;
                 width: 100%;
-                opacity: 0.9;
+                opacity: 5;
             }
 
             .button:hover {
                 opacity: 5;
-                background-color: #F0F3BD; 
+                background-color: #028090; 
             }
         </style>
     </header>
@@ -141,8 +142,8 @@ if (isset($_POST["login"])) {
         </div>
         <body>
             <div class="container">
-                <form action="" method = "POST" class="container" enctype="multipart/form-data">
-                    <h2 class="login">Login</h2>
+                <form action="" method = "POST" class="containerlogin" enctype="multipart/form-data">
+                    <h2 class="login1">Login</h2>
 
                     <label for="Blog Name"><b>Blog Name</b></label>
                     <input type="text" placeholder="Enter Blog Name" name="blogName" required>
@@ -150,13 +151,21 @@ if (isset($_POST["login"])) {
                     <label for="password"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="password" required>
 
-                    <button type="submit" class="button">Login</button>
+                    <button type="submit" onClick="refreshPage();" class="button">Login</button>
+                    <script>
+                        function refreshPage() {
+                            window.location.reload();
+                        }
+                    </script>
                 </form>
             </div>
 
     </div>
 </body>
-<footer></footer>
+<hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
+<div class="footer">
+    <h2>Follow Us</h2>
+</div>
 </html>
 
 

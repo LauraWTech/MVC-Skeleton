@@ -52,7 +52,7 @@ if (!isset($_SESSION['attempts']))
             /* Header/Blog Title */
             .header {
                 font-family: 'Josefin Sans', sans-serif;
-                font-size: 500%;
+                font-size-adjust: 500px;
                 letter-spacing: 3px;
                 padding-bottom: 100px;
                 padding-top:150px;
@@ -238,7 +238,7 @@ if (!isset($_SESSION['attempts']))
             <h2>Follow Us</h2>
             <!-- Add font awesome icons -->
             <a href="https://www.instagram.com/advntr.cc/" class="fa fa-facebook"></a>
-            <a href="https://www.instagram.com/advntr.cc/" class="fa fa-twitter"></a>
+            <a href="https://twitter.com/ADVNTRcc?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter"></a>
             <a href="https://www.instagram.com/advntr.cc/" class="fa fa-instagram"></a>
 
         </div>
