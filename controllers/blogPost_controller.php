@@ -10,8 +10,10 @@ Class blogPostController {
             require_once('views/DynamicPages/createNewPost.php');
         } else {
             blogPost::add();
-
-            $posts = blogPost::search(); //$products is used within the view
+            if (isset($_SESSION['blogID'])){
+              $blogID = (int)$_SESSION['blogID'];
+              $posts = blogPost::search($blogID); 
+            }
             require_once('views/DynamicPages/readAllposts.php');//just using this page to test reading back
         }
     }
@@ -29,8 +31,10 @@ Class blogPostController {
 
         try {
             // we use the given id to get the correct post
-            if (isset($_SESSION['blogID']))
-            $posts = blogPost::search($_SESSION['blogID']);
+            if (isset($_SESSION['blogID'])){
+              $blogID = (int)$_SESSION['blogID'];
+              $posts = blogPost::search($blogID);
+            }
             require_once('views/DynamicPages/readAllPosts.php');
         } catch (Exception $ex) {
             return call('pages', 'error');
@@ -44,7 +48,7 @@ Class blogPostController {
 
         try {
             // we use the given id to get the correct post
-            $posts = blogPost::search($_GET['specificCategory']);
+            $posts = blogPost::category($_GET['specificCategory']);
             require_once('views/DynamicPages/readAllPosts.php');
         } catch (Exception $ex) {
             return call('pages', 'error');

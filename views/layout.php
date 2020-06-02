@@ -112,7 +112,7 @@
                 <a href='?controller=blogger&action=logout'>Logout</a><br>
                 <a href='?controller=blogPost&action=create'>Create&nbsp;new&nbsp;post</a><br>
                 <a href='?controller=blogPost&action=readAll'>Posts</a><br>
-                <a href='?controller=blogPost&action=search&category=1'>Popular&nbsp;Posts</a><br>
+                <a href='?controller=blogPost&action=search'>Popular&nbsp;Posts</a><br>
             </div>
 
             <span class="hamburger" style="font-size:35px;cursor: pointer; display: inline-block; text-align: centre" onclick="openNav()">&#9776;</span>
@@ -146,7 +146,6 @@
     
     <div class="w3-container w3-pink">
         <?php require_once('routes.php'); ?>
-        </<div>
 
             
                 <footer >

@@ -30,6 +30,7 @@
         <div class="posts">
 
             <?php
+            if(!empty($posts)){
             foreach ($posts as $p) {
                 ?>
                 <h3><?php echo$p->title . PHP_EOL; ?></h3>
@@ -56,6 +57,7 @@
                 }
                 echo$p->publishedAt . PHP_EOL;
             }
+            }
             ?>
             &nbsp;
             <div class="img">
@@ -63,6 +65,5 @@
                 <!--                    </div>-->
             </div>
         </div>
-
     </body>
 </html>
