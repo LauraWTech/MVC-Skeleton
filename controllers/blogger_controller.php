@@ -51,6 +51,7 @@ Class BloggerController {
                     $_SESSION['attempts'] = $currentAttempts;
                     require_once('views/DynamicPages/bloggerLogin.php');
                   }else{
+                    $_SESSION['attempts']=0;
                     echo $e->getMessage(). PHP_EOL;
                     echo "Have you registered ?";
                   }
