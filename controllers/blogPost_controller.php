@@ -48,7 +48,7 @@ Class blogPostController {
 
         try {
             // we use the given id to get the correct post
-            $posts = blogPost::search($_GET['specificCategory']);
+            $posts = blogPost::category($_GET['specificCategory']);
             require_once('views/DynamicPages/readAllPosts.php');
         } catch (Exception $ex) {
             return call('pages', 'error');

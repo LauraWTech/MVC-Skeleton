@@ -152,7 +152,7 @@ class blogPost {
         $list = [];
         $db = Db::getInstance();
         
-        $req = $db->prepare("SELECT DISTINCT 1 FROM categoryID WHERE categoryID = :categoryID"); //
+        $req = $db->prepare("SELECT * FROM post_table WHERE categoryID = :categoryID"); //
                $req->bindParam(':categoryID', $category);
       $req->execute();
                    
