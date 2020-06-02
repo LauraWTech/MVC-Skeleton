@@ -38,7 +38,7 @@
                     position: relative;
                     height:auto;
                     width:auto;
-/*                    line-height: 30px;*/
+                    /*                    line-height: 30px;*/
                     max-height: 3%;
                     max-width: 3%;
                     float: right;
@@ -130,28 +130,28 @@
             <div class ="logo">
                 <img src="logo1.png" class="img-fluid" >
             </div>
-                            <div class="login"<p><?php
-                    if (isset($_SESSION["blogName"])) {
-                        echo $_SESSION['blogName'] . " " . $_SESSION['lastLogin'];
-                    }
-                    ?></p>
-                </div>
-            
-                </div>
-        
+            <div class="login"<p><?php
+                if (isset($_SESSION["blogName"])) {
+                    echo $_SESSION['blogName'] . " " . $_SESSION['lastLogin'];
+                }
+                ?></p>
+            </div>
 
-        
+        </div>
+
+
+
 
     </header
-    
+
     <div class="w3-container w3-pink">
         <?php require_once('routes.php'); ?>
         </<div>
 
-            
-                <footer >
+
+            <footer >
 <!--     Copyright &COPY; <?//= date('Y'); ?>-->
-                </footer>
+            </footer>
         </div>
     </body>
 </html>

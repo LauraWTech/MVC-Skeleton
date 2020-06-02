@@ -39,9 +39,6 @@ if (isset($_POST["login"])) {
     }
 }
 
-//setcookie("$firstName", "$lastName", time() - 86400);
-if (!isset($_SESSION['attempts']))
-    $_SESSION['attempts'] = 0;
 ?>
 
 <!DOCTYPE html>

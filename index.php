@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+<?php session_start(); 
+
+
+//setcookie("$firstName", "$lastName", time() - 86400);
+if (!isset($_SESSION['attempts']))
+    $_SESSION['attempts'] = 0;
+?>
 <html>
     <head>
         <meta charset="UTF-8">
