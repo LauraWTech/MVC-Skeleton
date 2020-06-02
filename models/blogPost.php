@@ -47,7 +47,7 @@ class blogPost {
         $blogID = $_SESSION['blogID'];}
         $categoryID = $filteredcategoryID;
         $title = $filteredTitle;
-        $publishedAt = date("d-m-y");
+        $publishedAt = date("y-m-d H:i:s");
         $content = $filteredContent;
         $req->execute();
 
@@ -55,7 +55,7 @@ class blogPost {
         $lastid = $db->lastInsertId();
         $postString = 'postNo' . $lastid;
         //need to change date(...) to do date and time so we can get rid of query below
-        $req = $db->query("UPDATE post_table SET publishedAt = now() WHERE postID=$lastid");
+        //$req = $db->query("UPDATE post_table SET publishedAt = now() WHERE postID=$lastid");
 
 //upload post image to images directory and store filename in database
         $postImage = blogPost::uploadFile($postString);
