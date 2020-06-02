@@ -11,14 +11,38 @@
         <style> 
 
             /* Add a card effect for articles */
-            .posts {
+            .allPosts {
                 float: left;
-                background-color: white;
-                width:75%; 
-                padding: 40px;
+/*                background-color: white;*/
+                width:100%; 
+                padding-top: 10px;
+                padding-left: 200px;
+                padding-right: 200px;
+                padding-bottom: 50px;
                 margin-top: 20px;
                 image-orientation: centre;
                 overflow: auto;
+            }
+
+            .img {
+
+                padding: 0px;
+                position: centre;
+            }
+            /* Footer */
+            .footer {
+                padding: 20px;
+                text-align: center;
+                /*                background: #ddd;*/
+                margin-top: 20px;
+            }
+
+            /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 800px) {
+                .leftcolumn, .rightcolumn {
+                    width: 100%;
+                    padding: 0;
+                }
             }
         </style>
 
@@ -27,7 +51,7 @@
         </div>
         <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
 
-        <div class="posts">
+        <div class="allPosts">
 
             <?php
             if(!empty($posts)){
@@ -52,18 +76,26 @@
                         $img = "<img src='views/images/$p->postImage' width='800' height = '600' />";   //added /../
                         echo $img;
                     } else {
-                        echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
+                        echo "<img src='views/images/standard/_noproductimage.png' width='150' />".PHP_EOL;
                     }
                 }
-                echo$p->publishedAt . PHP_EOL;
+                ?><h6><?php echo$p->publishedAt . PHP_EOL;?></h6>
+                <hr style="height:1px;border-width:0;color:gray;background-color:gray"><?php
             }
-            }
-            ?>
+
+            ?> 
+
             &nbsp;
             <div class="img">
                 <img class="img" alt="image" style="width:100%;"">
                 <!--                    </div>-->
             </div>
         </div>
+
+
+        <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
+        <div class="footer"></div>
+
+
     </body>
 </html>

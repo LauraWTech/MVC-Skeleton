@@ -31,7 +31,7 @@ class blogger {
 
     public static function add() {
         $db = Db::getInstance();
-        $req = $db->prepare("Insert into register_table(blogName, firstName, lastName, email, registeredAt, lastLogin, phoneNumber, intro, aboutMe, passwordHASH) values (:blogName, :firstName, :lastName, :email, :registeredAt, :lastLogin, :phoneNumber, :intro, :aboutMe, :password)");
+        $req = $db->prepare("Insert into register_table(blogName, firstName, lastName, email, phoneNumber, registeredAt, lastLogin, intro, aboutMe, passwordHASH) values (:blogName, :firstName, :lastName, :email, :phoneNumber, :registeredAt, :lastLogin, :intro, :aboutMe, :password)");
         $req->bindParam(':blogName', $blogName);
         $req->bindParam(':firstName', $firstName);
         $req->bindParam(':lastName', $lastName);
@@ -81,53 +81,60 @@ class blogger {
         $aboutMe = $filteredaboutMe;
         $passwordHASH = password_hash($filteredpassword, PASSWORD_DEFAULT);
         $req->execute();
+
+
         //retrieving last ID (BlogID for use in displaying blogs
         $blogid = $db->lastInsertId();
+        $req = $db->query("UPDATE register_table SET lastLogin = now() WHERE blogID=$blogid");
+        $req = $db->query("UPDATE register_table SET registeredAt = now() WHERE blogID=$blogid");
         $req = $db->prepare('SELECT * FROM register_table WHERE blogID = :blogID');
         $req->bindParam(':blogID', $blogid);
         $req->execute();
         $blogger = $req->fetch();
+
+        
         $bloggerObject = new blogger($blogger['blogID'], $blogger['blogName'], $blogger['firstName'], $blogger['lastName'], $blogger['email'], $blogger['phoneNumber'], $blogger['registeredAt'], $blogger['lastLogin'],  $blogger['intro'], $blogger['aboutMe'], $blogger['passwordHASH']);
         return $bloggerObject;
     }
 
     public static function findBlogger($bloggers) {
         $db = Db::getInstance();
-                  
+
 
 // set parameters and execute
         if (isset($_POST['blogName']) && $_POST['blogName'] != "") {
             $filteredblogName = filter_input(INPUT_POST, 'blogName', FILTER_SANITIZE_SPECIAL_CHARS);
         }
-        
+
         if (isset($_POST['password']) && $_POST['password'] != "") {
             $filteredpassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
         }
 
         $blogName = $filteredblogName;
-       // $passwordHASH = password_verify($filteredpassword, PASSWORD_DEFAULT);
-       $loggedin = false;
+        // $passwordHASH = password_verify($filteredpassword, PASSWORD_DEFAULT);
+        $loggedin = false;
         foreach ($bloggers as $blogger) {
-            if (($blogger->blogName == $blogName) && (password_verify($filteredpassword, $blogger->passwordHASH)))
-            {
+            if (($blogger->blogName == $blogName) && (password_verify($filteredpassword, $blogger->passwordHASH))) {
                 $loggedin = true;
-                break;                         
-                }
+                break;
             }
-           
+        }
+
 
 
 //AND (passwordHASH = :passwordHASH)")
         //can also try a prepare
-      //  $req = $db->query("SELECT * FROM register_table WHERE (blogName = :blogName)");
+        //  $req = $db->query("SELECT * FROM register_table WHERE (blogName = :blogName)");
         // $req->bindParam(':blogName', $blogName);
-       // $req->bindParam(':passwordHASH', $passwordHASH);
-       // $req->execute();
-       // $blogger = $req->fetch();
-       
-        
+        // $req->bindParam(':passwordHASH', $passwordHASH);
+        // $req->execute();
+        // $blogger = $req->fetch();
+
+
 
         if ($loggedin) {
+
+          
           //update last login time in database
           $req = $db->prepare("UPDATE register_table SET lastLogin = :lastLogin WHERE blogID=$blogger->blogID"); 
           $lastLogin = date("y-m-d H:i:s");
@@ -135,6 +142,7 @@ class blogger {
           $req->execute();
           $_SESSION['lastLogin']=$lastLogin;
           return $blogger;
+
             //($blogger['blogID'], $blogger['blogName'], $blogger['firstName'], $blogger['lastName'], $blogger['email'], $blogger['phoneNumber'], $blogger['publishedAt'], $blogger['lastLogin'], $blogger['intro'], $blogger['aboutMe'], $blogger['passwordHASH']);
         } else {
             //replace with a more meaningful exception
@@ -142,7 +150,18 @@ class blogger {
 
             throw new TooManyLoginAttempts();
         }
-        }
+    }
+
+    public static function updateLastLogin($blogid) {
+        $db = Db::getInstance();
+        $req = $db->query("UPDATE register_table SET lastLogin = now() WHERE blogID=$blogid");
+        $req = $db->prepare('SELECT * FROM register_table WHERE blogID = :blogID');
+        $req->bindParam(':blogID', $blogid);
+        $req->execute();
+        $blogger = $req->fetch();
+        $bloggerObject = new blogger($blogger['blogID'], $blogger['blogName'], $blogger['firstName'], $blogger['lastName'], $blogger['email'], $blogger['phoneNumber'], $blogger['registeredAt'], $blogger['lastLogin'], $blogger['intro'], $blogger['aboutMe'], $blogger['passwordHASH']);
+        return $bloggerObject;
+    }
 
     public static function all() {
         $list = [];
@@ -150,7 +169,7 @@ class blogger {
         $req = $db->query('SELECT * FROM register_table');
         // we create a list of blogger objects from the database results
         foreach ($req->fetchAll() as $bloggers) {
-            $list[] = new blogger($bloggers['blogID'], $bloggers['blogName'], $bloggers['firstName'], $bloggers['lastName'], $bloggers['email'], $bloggers['phoneNumber'], $bloggers['registeredAt'], $bloggers['lastLogin'],  $bloggers['intro'], $bloggers['aboutMe'], $bloggers['passwordHASH']);
+            $list[] = new blogger($bloggers['blogID'], $bloggers['blogName'], $bloggers['firstName'], $bloggers['lastName'], $bloggers['email'], $bloggers['phoneNumber'], $bloggers['registeredAt'], $bloggers['lastLogin'], $bloggers['intro'], $bloggers['aboutMe'], $bloggers['passwordHASH']);
         }
         return $list;
     }

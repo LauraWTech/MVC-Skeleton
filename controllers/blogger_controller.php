@@ -1,13 +1,15 @@
 <?php
 
-class TooManyLoginAttempts extends Exception{
-          private $maxAttempts = 3; //$TooManyLoginAttempts is the object and private is the access modifier
-          protected $message = "You have Exceeded Maximum Login Attempts";
-         
-          public function getMaxAttempts(){
-              return $this->maxAttempts;
-          }
-      }
+class TooManyLoginAttempts extends Exception {
+
+    private $maxAttempts = 3; //$TooManyLoginAttempts is the object and private is the access modifier
+    protected $message = "You have Exceeded Maximum Login Attempts";
+
+    public function getMaxAttempts() {
+        return $this->maxAttempts;
+    }
+
+}
 
 Class BloggerController {
 
@@ -18,19 +20,19 @@ Class BloggerController {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             require_once('views/DynamicPages/createNewBlogger.php');
         } else {
-            
+
             $registerBlogger = blogger::add();
             createSessionData($registerBlogger);
-            
+
             //$bloggers = blogger::all(); //$blogger is used within the view
             //require_once('views/DynamicPages/readAllBloggers.php');
         }
     }
-    
+
     public function readAll() {
-      // we store all the bloggers in a variable
-      $bloggers = blogger::all();
-      require_once('views/DynamicPages/readAllBloggers.php');
+        // we store all the bloggers in a variable
+        $bloggers = blogger::all();
+        require_once('views/DynamicPages/readAllBloggers.php');
     }
 
     public function login() {
@@ -54,11 +56,12 @@ Class BloggerController {
                     $_SESSION['attempts']=0;
                     echo $e->getMessage(). PHP_EOL;
                     echo "Have you registered ?";
-                  }
                 }
+            }
+        }
     }
-}
-public function logout() {
+
+    public function logout() {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             if (isset($_SESSION['blogID'])) {
                 unset($_SESSION['blogID']);
@@ -66,21 +69,20 @@ public function logout() {
                 unset($_SESSION['intro']);
                 unset($_SESSION['blogName']);
                 unset($_SESSION['lastLogin']);
-            unset($_SESSION['aboutMe']);
+                unset($_SESSION['aboutMe']);
             }
         }
-        }
-                  }
+    }
 
-
+}
 
 function createSessionData($blogger) {
     if (isset($_SESSION['attempts'])) {
         $_SESSION ['blogID'] = $blogger->blogID;
         $_SESSION ['blogName'] = $blogger->blogName;
-        $_SESSION ['lastLogin'] = $blogger->lastLogin; 
-        $_SESSION ['intro'] = $blogger->intro; 
-        $_SESSION ['aboutMe'] = $blogger->aboutMe; 
+        $_SESSION ['lastLogin'] = $blogger->lastLogin;
+        $_SESSION ['intro'] = $blogger->intro;
+        $_SESSION ['aboutMe'] = $blogger->aboutMe;
         //$_SESSION ['aboutMe'] = 'This is where my aboutMe sentence should show';
     }
 }
