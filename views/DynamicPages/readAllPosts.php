@@ -54,6 +54,7 @@
         <div class="allPosts">
 
             <?php
+            if(!empty($posts)){
             foreach ($posts as $p) {
                 ?>
                 <h3><?php echo$p->title . PHP_EOL; ?></h3>
@@ -81,6 +82,7 @@
                 ?><h6><?php echo$p->publishedAt . PHP_EOL;?></h6>
                 <hr style="height:1px;border-width:0;color:gray;background-color:gray"><?php
             }
+
             ?> 
 
             &nbsp;
@@ -90,8 +92,10 @@
             </div>
         </div>
 
+
         <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
         <div class="footer"></div>
+
 
     </body>
 </html>

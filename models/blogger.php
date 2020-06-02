@@ -73,8 +73,9 @@ class blogger {
         $firstName = $filteredfirstName;
         $lastName = $filteredlastName;
         $email = $filteredemail;
-        $registeredAt = date("d-m-y");
-        $lastLogin = date("d-m-y");
+        $registeredAt = date("y-m-d H:i:s");
+        //$lastLogin = date("d-m-y");
+        $lastLogin = date("y-m-d H:i:s");
         $phoneNumber = $filteredphoneNumber;
         $intro = $filteredintro;
         $aboutMe = $filteredaboutMe;
@@ -90,7 +91,9 @@ class blogger {
         $req->bindParam(':blogID', $blogid);
         $req->execute();
         $blogger = $req->fetch();
-        $bloggerObject = new blogger($blogger['blogID'], $blogger['blogName'], $blogger['firstName'], $blogger['lastName'], $blogger['email'], $blogger['phoneNumber'], $blogger['registeredAt'], $blogger['lastLogin'], $blogger['intro'], $blogger['aboutMe'], $blogger['passwordHASH']);
+
+        
+        $bloggerObject = new blogger($blogger['blogID'], $blogger['blogName'], $blogger['firstName'], $blogger['lastName'], $blogger['email'], $blogger['phoneNumber'], $blogger['registeredAt'], $blogger['lastLogin'],  $blogger['intro'], $blogger['aboutMe'], $blogger['passwordHASH']);
         return $bloggerObject;
     }
 
@@ -130,7 +133,16 @@ class blogger {
 
 
         if ($loggedin) {
-            return $blogger;
+
+          
+          //update last login time in database
+          $req = $db->prepare("UPDATE register_table SET lastLogin = :lastLogin WHERE blogID=$blogger->blogID"); 
+          $lastLogin = date("y-m-d H:i:s");
+          $req->bindParam(':lastLogin', $lastLogin);
+          $req->execute();
+          $_SESSION['lastLogin']=$lastLogin;
+          return $blogger;
+
             //($blogger['blogID'], $blogger['blogName'], $blogger['firstName'], $blogger['lastName'], $blogger['email'], $blogger['phoneNumber'], $blogger['publishedAt'], $blogger['lastLogin'], $blogger['intro'], $blogger['aboutMe'], $blogger['passwordHASH']);
         } else {
             //replace with a more meaningful exception
