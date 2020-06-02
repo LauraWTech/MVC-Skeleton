@@ -35,17 +35,25 @@
                     color: #00A896;
                 } 
                 .logo {
-                    position: top;
+                    position: relative;
                     height:auto;
                     width:auto;
 /*                    line-height: 30px;*/
-                    max-height: 10px;
-                    max-width: 100px;
-                    float: centre;
+                    max-height: 3%;
+                    max-width: 3%;
+                    float: right;
+                    padding: 0;
                 }
                 .h3 {
                     position: relative;
                     text-align: centre;
+                }
+                .login{
+                    float: right;
+                    text-align: right;
+                }
+                .home{
+                    letter-spacing: 3px;
                 }
             </style>
 
@@ -118,17 +126,21 @@
                     document.getElementById("mySidenav").style.width = "0";
                 }
             </script>
-            <h3><span><a class ="home" style="display: inline-block;" href='?controller=pages&action=home'>ADVNTR</a></span></h3>
-<!--            <div class ="logo">
-                <img src="Logo1.png" class="img-fluid" >
-            </div>-->
-            <body>
-                <p><?php
+            <h3><a class ="home" style="display: inline-block;" href='?controller=pages&action=home'>ADVNTR</a></h3>
+            <div class ="logo">
+                <img src="logo1.png" class="img-fluid" >
+            </div>
+                            <div class="login"<p><?php
                     if (isset($_SESSION["blogName"])) {
                         echo $_SESSION['blogName'] . " " . $_SESSION['lastLogin'];
                     }
                     ?></p>
-        </div>
+                </div>
+            
+                </div>
+        
+
+        
 
     </header
     
@@ -136,7 +148,7 @@
         <?php require_once('routes.php'); ?>
         </<div>
 
-            <body class="footer">
+            
                 <footer >
 <!--     Copyright &COPY; <?//= date('Y'); ?>-->
                 </footer>

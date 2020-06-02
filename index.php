@@ -40,16 +40,18 @@
                 font-family: 'Montserrat', sans-serif;
                 padding-top: 10px;
                 background: #FAFAFA;
-                
+
             }
 
             /* Header/Blog Title */
             .header {
                 font-family: 'Josefin Sans', sans-serif;
+                font-size: 500%;
+                letter-spacing: 3px;
                 padding-bottom: 100px;
                 padding-top:150px;
                 text-align: center;
-                font-size: 50%;
+                
                 /*                    background: white;*/
             }
 
@@ -99,7 +101,7 @@
             .footer {
                 padding: 20px;
                 text-align: center;
-/*                background: #ddd;*/
+                /*                background: #ddd;*/
                 margin-top: 20px;
             }
 
@@ -157,6 +159,9 @@
     </header>
     <body>
         <div class="header">
+<!--            <div class ="headerImg">
+                <img src="logo1.png" class="img-fluid" >
+            </div>-->
             <h1>Start your Advntr here!</h1>
         </div>
         <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
@@ -220,25 +225,25 @@
                     </p>
                 </form>
             </div>
- 
+
         </div>
         <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
-           <div class="footer">
-                <h2>Follow Us</h2>
-                <!-- Add font awesome icons -->
-                <a href="https://www.instagram.com/advntr.cc/" class="fa fa-facebook"></a>
-                <a href="https://www.instagram.com/advntr.cc/" class="fa fa-twitter"></a>
-                <a href="https://www.instagram.com/advntr.cc/" class="fa fa-instagram"></a>
+        <div class="footer">
+            <h2>Follow Us</h2>
+            <!-- Add font awesome icons -->
+            <a href="https://www.instagram.com/advntr.cc/" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/advntr.cc/" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/advntr.cc/" class="fa fa-instagram"></a>
 
-            </div>
-<!--        <div class="right">
-            <h2>About Me</h2>-->
-            <!--<div class="img">
-               <img src= "https://localhost/MVC-Skeleton/views/images/HCH_1772.jpg" alt="image" style="width:100%;"> 
-            </div>-->
-<!--                        <h4><p><?php // echo $_SESSION ['aboutMe']               ?></p></h4>
-            <h5><p><?php // echo $_SESSION ['intro']               ?></p></h5>-->
-<!--        </div>-->
+        </div>
+        <!--        <div class="right">
+                    <h2>About Me</h2>-->
+        <!--<div class="img">
+           <img src= "https://localhost/MVC-Skeleton/views/images/HCH_1772.jpg" alt="image" style="width:100%;"> 
+        </div>-->
+<!--                        <h4><p><?php // echo $_SESSION ['aboutMe']                ?></p></h4>
+        <h5><p><?php // echo $_SESSION ['intro']                ?></p></h5>-->
+        <!--        </div>-->
         <!--                    <div class="card">
                                 <h3>Popular Post</h3>
                                 <div class="img">Image</div><br>
@@ -262,8 +267,8 @@
                     </div>-->
         <!--            <div class="container-fluid">-->
 
-<!--    </div>
-</div>
-</div>-->
-</body>
+        <!--    </div>
+        </div>
+        </div>-->
+    </body>
 </html>

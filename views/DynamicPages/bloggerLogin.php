@@ -27,7 +27,7 @@ if (isset($_POST["login"])) {
             $result = $statement->fetchAll();
             foreach ($result as $row) {
                 if (password_verify($_POST["password"], $row["password"])) {
-                    setcookie("type", $row["username"], time() + 3600);
+                    setcookie("type", $row["username"], time() + 60);
                     header("location:index.php");
                 } else {
                     $message = '<div class="alert alert-danger">Wrong Password</div>';
@@ -57,109 +57,109 @@ if (!isset($_SESSION['attempts']))
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
     <header>
-    <style>
-        body,h1,h2,h3,h4,h5 {font-family: 'Montserrat', sans-serif;
-        }
+        <style>
+            body,h1,h2,h3,h4,h5 {font-family: 'Montserrat', sans-serif;
+            }
 
-        h1{
-            text-align: centre; 
-            color: black;
-        }
-        .login{
-            text-align: left; 
-        }
-        .blogName{
-            text-align: left; 
-        }
-        .password{
-            text-align: left; 
-        }
+            h1{
+                text-align: centre; 
+                color: black;
+            }
+            .login{
+                text-align: left; 
+            }
+            .blogName{
+                text-align: left; 
+            }
+            .password{
+                text-align: left; 
+            }
 
-/*        body, html {
-            height: 200%;
-            text-align: centre;
-        }*/
+            /*        body, html {
+                        height: 200%;
+                        text-align: centre;
+                    }*/
 
-        body {
-            box-sizing: border-box;
-        }
+            body {
+                box-sizing: border-box;
+            }
 
-        .bg-img {
-            /* The image used */
-            background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1772.jpg");
-            min-height: 700px;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-        /* Add styles to the form container */
-        .container {
-            position: absolute;
-            right: 0;
-            margin: 20px;
-            width: 25px;
-            padding: 12px;
-            background-color: white;
-            opacity: 0.9;
-            text-align: left;
-        }
+            .bg-img {
+                /* The image used */
+                background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1772.jpg");
+                min-height: 700px;
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+            /* Add styles to the form container */
+            .container {
+                position: absolute;
+                right: 0;
+                margin: 20px;
+                width: 25px;
+                padding: 12px;
+                background-color: white;
+                opacity: 0.9;
+                text-align: left;
+            }
 
-        /* Full-width input fields */
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            border: none;
-            background: #f1f1f1;
-        }
+            /* Full-width input fields */
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                border: none;
+                background: #f1f1f1;
+            }
 
-        input[type=text]:focus, input[type=password]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
 
-        /* Set a style for the submit button */
-        .button {
-            background-color: #00A896;
-            color: white;
-            padding: 15px 12px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            opacity: 0.9;
-        }
+            /* Set a style for the submit button */
+            .button {
+                background-color: #00A896;
+                color: white;
+                padding: 15px 12px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
+            }
 
-        .button:hover {
-            opacity: 5;
-            background-color: #F0F3BD; 
-        }
-    </style>
-</header>
+            .button:hover {
+                opacity: 5;
+                background-color: #F0F3BD; 
+            }
+        </style>
+    </header>
 
     <div class="bg-img">
         <div class="header">
-        <h1>Start your Advntr now...</h1>
+            <h1>Start your Advntr now...</h1>
         </div>
         <body>
-        <div class="container">
-            <form action="" method = "POST" class="container" enctype="multipart/form-data">
-                <h2 class="login">Login</h2>
+            <div class="container">
+                <form action="" method = "POST" class="container" enctype="multipart/form-data">
+                    <h2 class="login">Login</h2>
 
-                <label for="Blog Name"><b>Blog Name</b></label>
-                <input type="text" placeholder="Enter Blog Name" name="blogName" required>
+                    <label for="Blog Name"><b>Blog Name</b></label>
+                    <input type="text" placeholder="Enter Blog Name" name="blogName" required>
 
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
 
-                <button type="submit" class="button">Login</button>
-            </form>
-        </div>
+                    <button type="submit" class="button">Login</button>
+                </form>
+            </div>
 
-</div>
-    </body>
-    <footer></footer>
+    </div>
+</body>
+<footer></footer>
 </html>
 
 
