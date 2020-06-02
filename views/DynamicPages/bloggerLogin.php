@@ -1,7 +1,7 @@
 <?php
 //login
 //connect to database
-//zinclude("connection.php");
+//include("connection.php");
 //set cookie and validate 
 if (isset($_COOKIE["type"])) {
     header("location: bloggerLogin.php");
@@ -27,7 +27,7 @@ if (isset($_POST["login"])) {
             $result = $statement->fetchAll();
             foreach ($result as $row) {
                 if (password_verify($_POST["password"], $row["password"])) {
-                    setcookie("type", $row["username"], time() + 3600);
+                    setcookie("type", $row["username"], time() + 60);
                     header("location:index.php");
                 } else {
                     $message = '<div class="alert alert-danger">Wrong Password</div>';
@@ -56,107 +56,110 @@ if (!isset($_SESSION['attempts']))
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
-    <style>
-        body,h1,h2,h3,h4,h5 {font-family: 'Montserrat', sans-serif;
-        }
-        .logo{
-            width: 20%;
-        }
-        h1{
-            text-align: centre; 
-            color: black;
-        }
-        .login{
-            text-align: left; 
-        }
-                .blogName{
-            text-align: left; 
-        }
-                .password{
-            text-align: left; 
-        }
+    <header>
+        <style>
+            body,h1,h2,h3,h4,h5 {font-family: 'Montserrat', sans-serif;
+            }
 
-        body, html {
-            height: 200%;
-            text-align: centre;
-        }
+            h1{
+                text-align: centre; 
+                color: black;
+            }
+            .login{
+                text-align: left; 
+            }
+            .blogName{
+                text-align: left; 
+            }
+            .password{
+                text-align: left; 
+            }
 
-        body {
-            box-sizing: border-box;
-        }
+            /*        body, html {
+                        height: 200%;
+                        text-align: centre;
+                    }*/
 
-        .bg-img {
-            /* The image used */
-            background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1772.jpg");
-            min-height: 700px;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-        /* Add styles to the form container */
-        .container {
-            position: absolute;
-            right: 0;
-            margin: 20px;
-            max-width: 300px;
-            padding: 12px;
-            background-color: white;
-            opacity: 0.9;
-            text-align: left;
-        }
+            body {
+                box-sizing: border-box;
+            }
 
-        /* Full-width input fields */
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            border: none;
-            background: #f1f1f1;
-        }
+            .bg-img {
+                /* The image used */
+                background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1772.jpg");
+                min-height: 700px;
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+            /* Add styles to the form container */
+            .container {
+                position: absolute;
+                right: 0;
+                margin: 20px;
+                width: 25px;
+                padding: 12px;
+                background-color: white;
+                opacity: 0.9;
+                text-align: left;
+            }
 
-        input[type=text]:focus, input[type=password]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
+            /* Full-width input fields */
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                border: none;
+                background: #f1f1f1;
+            }
 
-        /* Set a style for the submit button */
-        .btn {
-            background-color: #F0F3BD;
-            color: white;
-            padding: 15px 12px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            opacity: 0.9;
-        }
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
 
-        .btn:hover {
-            opacity: 5;
-            background-color: #F0F3BD; 
-        }
-    </style>
-</head>
-<body>
-    <div class="navbar"></div>
+            /* Set a style for the submit button */
+            .button {
+                background-color: #00A896;
+                color: white;
+                padding: 15px 12px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
+            }
+
+            .button:hover {
+                opacity: 5;
+                background-color: #F0F3BD; 
+            }
+        </style>
+    </header>
+
     <div class="bg-img">
-        <h1>Start your Advntr now...</h1>
-<div class="container">
-        <form action="" method = "POST" class="container" enctype="multipart/form-data">
-            <h2 class="login">Login</h2>
+        <div class="header">
+            <h1>Start your Advntr now...</h1>
+        </div>
+        <body>
+            <div class="container">
+                <form action="" method = "POST" class="container" enctype="multipart/form-data">
+                    <h2 class="login">Login</h2>
 
-            <label for="Blog Name"><b>Blog Name</b></label>
-            <input type="text" placeholder="Enter Blog Name" name="blogName" required>
+                    <label for="Blog Name"><b>Blog Name</b></label>
+                    <input type="text" placeholder="Enter Blog Name" name="blogName" required>
 
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
 
-            <button type="submit" class="btn">Login</button>
-        </form>
+                    <button type="submit" class="button">Login</button>
+                </form>
+            </div>
+
     </div>
 </body>
-</div>
+<footer></footer>
 </html>
 
 

@@ -12,11 +12,11 @@
     h1{
         text-height: 30px;
     }
-    .logo{
-        width: 20%;
-    }
+    /*    .logo{
+            width: 20%;
+        }*/
     h3{
-        text-align: centre; 
+        text-align: left; 
     }
     /*    .post{
             text-align: left; 
@@ -37,9 +37,9 @@
         color: white;
         padding-top: 60px;
     }
-    * {
-        box-sizing: border-box;
-    }
+    /*    * {
+            box-sizing: border-box;
+        }*/
     /*        .img{
                 image: url("http://localhost/MVC-Skeleton/views/images/logo1.png");
                 min-height: 100px;
@@ -88,68 +88,9 @@
         outline: none;
     }
     /*the container must be positioned relative:*/
-    
+
     content {font-family: 'Montserrat', sans-serif;}
-    
-.categoryID {
-  position: relative;
-}
 
-.custom-select select {
-  display: none; /*hide original SELECT element:*/
-}
-
-.categoryID-selected {
-  background-color: DodgerBlue;
-}
-
-/*style the arrow inside the select element:*/
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-/*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-/*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
-  color: #00A896;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none;
-}
-
-/*style items (options):*/
-.categoryID {
-  position: absolute;
-  background-color: #00A896;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/*hide the items when the select box is closed:*/
-.select-hide {
-  display: none;
-}
-
-.categoryID:hover, .same-as-selected {
-  background-color: #00A896;
-}
-    .button {
     .categoryID {
         position: relative;
     }
@@ -159,7 +100,7 @@
     }
 
     .categoryID-selected {
-        background-color: #00A896;
+        background-color: DodgerBlue;
     }
 
     /*style the arrow inside the select element:*/
@@ -193,7 +134,7 @@
     /*style items (options):*/
     .categoryID {
         position: absolute;
-        background-color: #02C39A;
+        background-color: #00A896;
         top: 100%;
         left: 0;
         right: 0;
@@ -206,85 +147,147 @@
     }
 
     .categoryID:hover, .same-as-selected {
-        background-color: #02C39A;
+        background-color: #00A896;
     }
     .button {
-        background-color: #0F0F3BD;
-        color: white;
-        padding: 15px 12px;
-        border: none;
-        cursor: pointer;
-        width: 30%;
-        opacity: 0.8;
-    }
+        .categoryID {
+            position: relative;
+        }
 
-    .button:hover {
-        opacity: 5;
-        background-color: #F0F3BD; 
-    }
+        .custom-select select {
+            display: none; /*hide original SELECT element:*/
+        }
 
-    /* Set a style for the submit button */
-    .postButton {
-        background-color: #F0F3BD;
-        color: black;
-        padding: 15px 12px;
-        border: none;
-        cursor: pointer;
-        width: 30%;
-        opacity: 0.9;
-    }
+        .categoryID-selected {
+            background-color: #00A896;
+        }
 
-    .postButton:hover {
-        opacity: 5;
-        background-color: #F0F3BD; 
-    } 
-</style>
-<body>
-    <div class="bg-img">
-    <div class="newPost">
-            <h1>Create New ADVNTR post</h1>
+        /*style the arrow inside the select element:*/
+        .select-selected:after {
+            position: absolute;
+            content: "";
+            top: 14px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: #fff transparent transparent transparent;
+        }
+
+        /*point the arrow upwards when the select box is open (active):*/
+        .select-selected.select-arrow-active:after {
+            border-color: transparent transparent #fff transparent;
+            top: 7px;
+        }
+
+        /*style the items (options), including the selected item:*/
+        .select-items div,.select-selected {
+            color: #00A896;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /*style items (options):*/
+        .categoryID {
+            position: absolute;
+            background-color: #02C39A;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+        }
+
+        /*hide the items when the select box is closed:*/
+        .select-hide {
+            display: none;
+        }
+
+        .categoryID:hover, .same-as-selected {
+            background-color: #00A896;
+        }
+        .button {
+            background-color: #00A896;
+            color: white;
+            padding: 15px 12px;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            opacity: 0.8;
+        }
+
+        .button:hover {
+            opacity: 5;
+            background-color: #F0F3BD; 
+        }
+
+        /* Set a style for the submit button */
+        .postButton {
+            background-color: #00A896;
+            color: black;
+            padding: 15px 12px;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            opacity: 0.9;
+        }
+
+        .postButton:hover {
+            opacity: 5;
+            background-color: #F0F3BD; 
+        } 
+    </style>
+    <body>
+        <div class="bg-img">
+            <div class="newPost">
+                <h1>Create New ADVNTR post</h1>
+            </div>
+            <form action="" method="POST" class="container" enctype="multipart/form-data">
+                <div class="box">
+                    <h3>Please fill in boxes below to upload post onto your blog:</h3>
+                    <!--            <h2 class="login">Login</h2>
+                    
+                                <label for="email"><b>Blog Name</b></label>-->
+
+                    <div class="container">
+
+                        <label>Title</label>
+                        <input class="input" type="text" name="title" required autofocus><br>
+                        <label for="content">Content</label><br>
+                        <textarea id="content" name="content" rows="10" cols="40" required></textarea><br><br>
+                        <label for="categoryID">Choose a category:</label>
+                        <select name="categoryID" id="category">
+                            <option value="1">Canyoning</option>
+                            <option value="2">Climbing</option>
+                            <option value="3">Hiking</option>
+                            <option value="4">Wild Swimming</option>
+                            <option value="5">Fell Running</option>
+                            <option value="6">Kayaking</option>
+                            <option value="7">Cycling</option>
+                            <option value="8">Fishing</option>
+                            <option value="9">Coasteering</option>
+                            <option value="10">Camping</option>
+                            <option value="11">Family</option>
+                        </select><br>
+                        <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+                        <input type="file" name="myUploader" class="button" required><br>
+                        <input class="postButton" type="submit" value="Add Post">
+                    </div>
+                </div> 
+            </form>
         </div>
-        <h3>Please fill in boxes below to upload post onto your blog:</h3>
-        <!--            <h2 class="login">Login</h2>
-        
-                    <label for="email"><b>Blog Name</b></label>-->
-
-        <div class="container">
-
-            <label>Title</label>
-            <input class="input" type="text" name="title" required autofocus><br>
-            <label for="content">Content</label><br>
-            <textarea id="content" name="content" rows="10" cols="40" required></textarea><br><br>
-            <label for="categoryID">Choose a category:</label>
-            <select name="categoryID" id="category">
-                <option value="1">Canyoning</option>
-                <option value="2">Climbing</option>
-                <option value="3">Hiking</option>
-                <option value="4">Wild Swimming</option>
-                <option value="5">Fell Running</option>
-                <option value="6">Kayaking</option>
-                <option value="7">Cycling</option>
-                <option value="8">Fishing</option>
-                <option value="9">Coasteering</option>
-                <option value="10">Camping</option>
-                <option value="11">Family</option>
-            </select><br>
-            <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-            <input type="file" name="myUploader" class="button" required><br>
-            <input class="postButton" type="submit" value="Add Post">
-
-       </div> 
-    </div>
-</body>
-<!--<style>
-    /*h1.hidden {
-      visibility: hidden;
-    }*/
-</style>-->
-<script>
-    function show(shown, hidden) {
-        document.getElementById(shown).style.display = 'block';
-        document.getElementById(hidden).style.display = 'none';
-        return false;
-    }
-</script>
+    </body>
+    <!--<style>
+        /*h1.hidden {
+          visibility: hidden;
+        }*/
+    </style>-->
+    <script>
+        function show(shown, hidden) {
+            document.getElementById(shown).style.display = 'block';
+            document.getElementById(hidden).style.display = 'none';
+            return false;
+        }
+    </script>

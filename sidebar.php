@@ -11,6 +11,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
+    <h3>Sidebar</h3>
     <!--    <div id="sidebarIcon">
             <div class="toggle-btn" onclick="myFunction(this). menuList()">
                 <div class="bar1"></div>
@@ -51,68 +52,70 @@
                     x.classList.toggle("change");
                 }
             </script>-->
-    <div class="sidebar-container" id="sidebar"style="display:none">
+    <div class="sidebar" id="mySidebar"style="display:none">
         <button class="toggle-btn" onclick="close()">☰</button>
         <button>&#9776</button>
-        
-        <!--        <div class="sidebar">-->
-<a href='?controller=blogger&action=create'>Register</a>
-<!--            <li><a href='?controller=blogger&action=login'>Login</a></li>
-            <li><a href='?controller=blogPost&action=create'>Create New Post</a></li>
-            <li><a href='?controller=blogPost&action=readAll'>Posts</a></li>
-            <li><a href='?controller=blogPost&action=search&category=1'>Popular Posts</a></li>
 
-            <a href='?controller=blogPostComment&action=create'>Add Comment</a>
-        </ul>-->
-            <div id="sidebar">
-        <button class="toggle-btn" onclick="open()">☰</button>
-            </div>
+        <!--        <div class="sidebar">-->
+        <a href='?controller=blogger&action=create'>Register</a>
+        <!--            <li><a href='?controller=blogger&action=login'>Login</a></li>
+                    <li><a href='?controller=blogPost&action=create'>Create New Post</a></li>
+                    <li><a href='?controller=blogPost&action=readAll'>Posts</a></li>
+                    <li><a href='?controller=blogPost&action=search&category=1'>Popular Posts</a></li>
+        
+                    <a href='?controller=blogPostComment&action=create'>Add Comment</a>
+                </ul>-->
+        <div id="mySidebar"class="sidenav">
+            <button class="toggle-btn" onclick="open()">☰</button>
+        </div>
         <!--        </div>-->
         <style> 
-            #sidebar{
-                margin: 0px;
-                padding: 0px;
-                font-family: 'Montserrat', sans-serif;
-            }
-            #sidebar{
-                position: fixed;
-                width: 200px;
+            .sidenav {
                 height: 100%;
-                background: black;
-                left:50px;
-                transition: margin-left 0.4s; 
-/*                all 500ms linear*/
-            } 
-            #sidebar.active{
-                left:0px;
-            }
-            #sidebar ul li{
-                color: rgba(230, 230, 230,0.9);
-                list-style: none;
-                padding: 15px 5px;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
             }
 
-            #sidebar .toggle-btn{
-                position: absolute;
-                left: 230px;
-                top: 20px;
-                background: white;
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
             }
-            #sidebar toggle-btn span{
-               display: block;
-               width: 30px;
-               height: 5px;
-               background: black;
-               margin: 3px 0px;
+
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
             }
 
         </style>
         <script>
             function open() {
-                document.getElementbyId("sidebar").style.display="block";
+                document.getElementbyId("sidebar").style.width = "250px";
             }
-            function close(){
-                document.getElementbyId("sidebar").style.display="none";
+            function close() {
+                document.getElementbyId("sidebar").style.width = "0";
             }
         </script>
     </div>
