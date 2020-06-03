@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -44,19 +43,19 @@
             .posts {
                 float: left;
                 width: 75%;
-                padding: 40px;
+                padding: 50px;
                 overflow: auto;
             }
             /* Add a card effect for articles */
             .right {
                 float: right;
                 width: 25%;
-                padding: 40px;
+                padding: 50px;
                 overflow: auto;
             }
             /* image */
             .img {
-
+width: 100%;
                 padding: 0px;
                 position: centre;
             }
@@ -166,7 +165,7 @@
                 <div class="img">
                     <img src= "Image1.png" alt="image" style="width:100%;">
                 </div><br>
-                <h5>Founded by 4 women, Hannah, Aman, Jo and Laura from Get Into Tech, Sky. Tell us about you and your adventures!</h5>
+                <h5>Four women sharing Advntr – inspiring each other in the great outdoors. We met on a Women's Get Into Tech course and used our love of digital to set up this blog. We want to help you escape to nature and find where you belong!</h5>
                 <hr style="height:1px;border-width:0;color:gray;background-color:gray">
             </div>
 

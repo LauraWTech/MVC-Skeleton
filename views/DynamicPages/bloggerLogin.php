@@ -76,6 +76,17 @@ if (!isset($_SESSION['attempts'])){
             .password{
                 text-align: left; 
             }
+              /* Header/Blog Title */
+            .header {
+/*                font-family: 'Josefin Sans', sans-serif;*/
+                font-size: 500%;
+/*                letter-spacing: 3px;*/
+                padding-bottom: 50px;
+                padding-top:100px;
+                text-align: right;
+
+                /*                    background: white;*/
+            }
 
             /*        body, html {
                         height: 200%;
@@ -89,7 +100,7 @@ if (!isset($_SESSION['attempts'])){
             .bg-img {
                 /* The image used */
                 background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1772.jpg");
-                min-height: 1200px;
+                min-height: 900px;
 
                 /* Center and scale the image nicely */
                 background-position: center;
@@ -127,7 +138,7 @@ if (!isset($_SESSION['attempts'])){
             /* Set a style for the submit button */
             .button {
                 background-color: #F0F3BD;
-                color: white;
+                color: black;
                 padding: 15px 12px;
                 border: none;
                 cursor: pointer;
@@ -168,10 +179,7 @@ if (!isset($_SESSION['attempts'])){
 
     </div>
 </body>
-<hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
-<div class="footer">
-    <h2>Follow Us</h2>
-</div>
+
 </html>
 
 

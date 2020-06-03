@@ -22,12 +22,13 @@
                 margin-top: 20px;
                 image-orientation: centre;
                 overflow: auto;
+                
             }
 
             .img {
 
                 padding: 0px;
-                position: centre;
+                position: left;
             }
             /* Footer */
             .footer {

@@ -17,7 +17,7 @@
     <header class="topnav">
         <div class="form-inline">
 
-           <style>
+            <style>
 
                 .topnav {
                     /*overflow: hidden;*/
@@ -36,27 +36,30 @@
                     color: #00A896;
                 } 
                 .logo {
-                    float: right;
-                    position: relative;
+                   
+                    position: sticky;
                     height:auto;
                     width:auto;
                     /*                    line-height: 30px;*/
-                    max-height: 3%;
-                    max-width: 3%;
+                    max-height: 2.5%;
+                    max-width: 2.5%;
                     padding: 0;
                 }
                 .h3 {
                     position: relative;
                     text-align: centre;
                 }
-                .login{
+                .loginText{
                     float: right;
                     text-align: right;
                 }
                 .home{
+                    position: sticky;
+                    float: bottom;
                     letter-spacing: 5px;
                     font-size: 20px;
                     text-align: centre;
+                    padding:0px;
                 }
                 .img-fluid{
                     float: right;
@@ -106,9 +109,10 @@
                 .hamburger{
                     text-align: left;
                     float: left;
-                    left:5px;
-                    top: 5px;
-                    bottom:5px;
+                    left:4px;
+                    top: 4px;
+                    bottom:4px;
+                    padding: 0;
                 }
             </style>
 
@@ -118,12 +122,12 @@
                 <a href='?controller=blogger&action=login'>Login</a><br>
                 <a href='?controller=blogger&action=logout'>Logout</a><br>
                 <a href='?controller=blogPost&action=create'>Create&nbsp;new&nbsp;post</a><br>
-                <a href='?controller=blogPost&action=readAll'>Posts</a><br>
-                <a href='?controller=blogPost&action=search'>Popular&nbsp;Posts</a><br>
+                <a href='?controller=blogPost&action=readAll'>All&nbsp;Advntr&nbsp;Posts</a><br>
+                <a href='?controller=blogPost&action=search'>My&nbsp;Posts</a><br>
             </div>
-
-            <span class="hamburger" style="font-size:35px;cursor: pointer; display: inline-block; text-align: centre" onclick="openNav()">&#9776;</span>
-
+            <div class="hamburger">
+                <span class="hamburger" style="font-size:35px;cursor: pointer; display: inline-block; text-align: centre" onclick="openNav()">&#9776;</span>
+            </div>
             <script>
                 function openNav() {
                     document.getElementById("mySidenav").style.width = "250px";
@@ -133,11 +137,13 @@
                     document.getElementById("mySidenav").style.width = "0";
                 }
             </script>
-            <h3><a class ="home" style="display: inline-block;" href='?controller=pages&action=home'>ADVNTR</a></h3>
             <div class ="logo">
                 <img src="logo1.png" class="img-fluid" >
             </div>
-            <div class="login"<p><?php
+            <div class="home">
+                <h3><a class ="home" style="display: inline-block;" href='?controller=pages&action=home'>ADVNTR</a></h3>
+            </div>
+            <div class="loginText"<p><?php
                 if (isset($_SESSION["blogName"])) {
                     echo $_SESSION['blogName'] . " " . $_SESSION['lastLogin'];
                 }
@@ -155,9 +161,9 @@
         <?php require_once('routes.php'); ?>
 
 
-            <footer >
+        <footer >
 <!--     Copyright &COPY; <?//= date('Y'); ?>-->
-            </footer>
-        </div>
-    </body>
+        </footer>
+    </div>
+</body>
 </html>
