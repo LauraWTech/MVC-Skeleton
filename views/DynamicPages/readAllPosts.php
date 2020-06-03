@@ -82,7 +82,7 @@
                 ?><h6><?php echo$p->publishedAt . PHP_EOL;?></h6>
                 <hr style="height:1px;border-width:0;color:gray;background-color:gray"><?php
             }
-
+            }
             ?> 
 
             &nbsp;
