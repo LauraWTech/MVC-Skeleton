@@ -33,7 +33,7 @@
                 padding-bottom: 100px;
                 padding-top:150px;
                 text-align: center;
-                
+
                 /*                    background: white;*/
             }
 
@@ -55,7 +55,7 @@
             }
             /* image */
             .img {
-width: 100%;
+                width: 100%;
                 padding: 0px;
                 position: centre;
             }
@@ -141,9 +141,6 @@ width: 100%;
     </header>
     <body>
         <div class="header">
-<!--            <div class ="headerImg">
-                <img src="logo1.png" class="img-fluid" >
-            </div>-->
             <h1>Start your Advntr here!</h1>
         </div>
         <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
@@ -223,8 +220,8 @@ width: 100%;
         <!--<div class="img">
            <img src= "https://localhost/MVC-Skeleton/views/images/HCH_1772.jpg" alt="image" style="width:100%;"> 
         </div>-->
-<!--                        <h4><p><?php // echo $_SESSION ['aboutMe']                ?></p></h4>
-        <h5><p><?php // echo $_SESSION ['intro']                ?></p></h5>-->
+<!--                        <h4><p><?php // echo $_SESSION ['aboutMe']                 ?></p></h4>
+        <h5><p><?php // echo $_SESSION ['intro']                 ?></p></h5>-->
         <!--        </div>-->
         <!--                    <div class="card">
                                 <h3>Popular Post</h3>

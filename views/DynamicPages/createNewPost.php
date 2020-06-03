@@ -33,10 +33,10 @@
     }
 
     .header {
+        /*                letter-spacing: 3px;*/
+        padding-bottom: 50px;
+        padding-top:100px;
         text-align: right;
-        padding:40px;
-        color: black;
-        padding-top: 60px;
     }
     /*    * {
             box-sizing: border-box;
@@ -52,9 +52,7 @@
     .bg-img {
         /* The image used */
         background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1711.jpg");
-
         min-height: 1000px;
-
         /* Center and scale the image nicely */
         background-position: center;
         background-repeat: no-repeat;
@@ -91,77 +89,6 @@
 
     content {font-family: 'Montserrat', sans-serif;}
 
-    .categoryID {
-        position: relative;
-    }
-
-    .custom-select select {
-        display: none; /*hide original SELECT element:*/
-    }
-
-    .categoryID-selected {
-        background-color: lightgrey;
-    }
-
-    /*style the arrow inside the select element:*/
-    .select-selected:after {
-        position: absolute;
-        content: "";
-        top: 14px;
-        right: 10px;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
-        border-color: #fff transparent transparent transparent;
-    }
-
-    /*point the arrow upwards when the select box is open (active):*/
-    .select-selected.select-arrow-active:after {
-        border-color: transparent transparent #fff transparent;
-        top: 7px;
-    }
-
-    /*style the items (options), including the selected item:*/
-    .select-items div,.select-selected {
-        color: #00A896;
-        padding: 8px 16px;
-        border: 1px solid transparent;
-        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-        cursor: pointer;
-        user-select: none;
-    }
-
-    /*style items (options):*/
-    .categoryID {
-        position: absolute;
-        background-color: #00A896;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 99;
-    }
-
-    /*hide the items when the select box is closed:*/
-    .select-hide {
-        display: none;
-    }
-
-    .categoryID:hover, .same-as-selected {
-        background-color: #00A896;
-    }
-    .button {
-        .categoryID {
-            position: relative;
-        }
-
-        .custom-select select {
-            display: none; /*hide original SELECT element:*/
-        }
-
-        .categoryID-selected {
-            background-color: #00A896;
-        }
-
         /*style the arrow inside the select element:*/
         .select-selected:after {
             position: absolute;
@@ -193,7 +120,7 @@
         /*style items (options):*/
         .categoryID {
             position: absolute;
-            background-color: #002C39A;
+            background-color: white;
             top: 100%;
             left: 0;
             right: 0;
@@ -209,7 +136,7 @@
             background-color: #F0F3BD;
         }
         .button {
-            background-color: #F0F3BD;
+            background-color: white;
             color: white;
             padding: 15px 12px;
             border: none;
@@ -241,11 +168,11 @@
     </style>
     <body>
         <div class="bg-img">
-            <div class="header">
+<!--            <div class="header">
                 <header><h2>Create New ADVNTR post</h2></header>
-            </div>
+            </div>-->
             <div class="containerNewPost">
-            <form action="" method="POST" class="containerNewPost" enctype="multipart/form-data">
+                <form action="" method="POST" class="containerNewPost" enctype="multipart/form-data">
                     <label>Title</label>
                     <input class="input" type="text" name="title" required autofocus><br>
                     <label for="content">Content</label><br>
@@ -268,15 +195,10 @@
                     <input type="file" name="myUploader" class="postButton" required><br>
                     <input class="postButton" type="submit" value="Add Post">
 
-                </div> 
-            </form>
-        </div>
+                    </div> 
+                </form>
+            </div>
     </body>
-    <!--<style>
-        /*h1.hidden {
-          visibility: hidden;
-        }*/
-    </style>-->
     <script>
         function show(shown, hidden) {
             document.getElementById(shown).style.display = 'block';

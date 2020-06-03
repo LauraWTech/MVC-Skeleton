@@ -13,22 +13,29 @@
             /* Add a card effect for articles */
             .allPosts {
                 float: left;
-/*                background-color: white;*/
-                width:100%; 
-                padding-top: 10px;
-                padding-left: 200px;
-                padding-right: 200px;
-                padding-bottom: 50px;
-                margin-top: 20px;
-                image-orientation: centre;
+                /*                background-color: white;*/
+                max-width: 1500px; 
+                padding-top: 30px;
+                padding-left: 20%;
+                padding-right: 20%;
+                padding-bottom: 30px;
+                margin-top: 0px;
+                image-orientation: left;
                 overflow: auto;
+
+            }
+            .header{
                 
+                padding-bottom: 100px;
+                padding-top:150px;
+                text-align: center;
             }
 
             .img {
 
                 padding: 0px;
-                position: left;
+                position: centre;
+                width:100%;
             }
             /* Footer */
             .footer {
@@ -40,7 +47,7 @@
 
             /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
             @media screen and (max-width: 800px) {
-                .leftcolumn, .rightcolumn {
+                .allPosts, .img {
                     width: 100%;
                     padding: 0;
                 }
@@ -50,39 +57,39 @@
         <div class="header">
             <h1>All Advntr Posts</h1>
         </div>
-        <hr style="height:1px;border-width:0;color:gray;background-color:lightgrey">
+        <hr style="height:1px;width:100%;color:gray;background-color:lightgrey">
 
         <div class="allPosts">
 
             <?php
-            if(!empty($posts)){
-            foreach ($posts as $p) {
-                ?>
-                <h3><?php echo$p->title . PHP_EOL; ?></h3>
+            if (!empty($posts)) {
+                foreach ($posts as $p) {
+                    ?>
+                    <h3><?php echo$p->title . PHP_EOL; ?></h3>
 
-                <?php echo$p->content . PHP_EOL; ?> 
-                <?php
-                if ($p->postImage !== NULL) {
-                    //$path = dirname(__DIR__) . "\\images\\"; 
-                    $path = __DIR__ . "/../../views/images/";
-                    //$path = __DIR__;
-                    //$pathArray = explode ('/', $path);
-                    //$length = count($pathArray);
+                    <?php echo$p->content . PHP_EOL; ?> 
+                    <?php
+                    if ($p->postImage !== NULL) {
+                        //$path = dirname(__DIR__) . "\\images\\"; 
+                        $path = __DIR__ . "/../../views/images/";
+                        //$path = __DIR__;
+                        //$pathArray = explode ('/', $path);
+                        //$length = count($pathArray);
 
 
-                    $file = $path . $p->postImage;
-                    //echo $file;
-                    if (file_exists($file)) {
-                        //need to use local path name to display images full name doesnt work
-                        $img = "<img src='views/images/$p->postImage' width='800' height = '600' />";   //added /../
-                        echo $img;
-                    } else {
-                        echo "<img src='views/images/standard/_noproductimage.png' width='150' />".PHP_EOL;
+                        $file = $path . $p->postImage;
+                        //echo $file;
+                        if (file_exists($file)) {
+                            //need to use local path name to display images full name doesnt work
+                            $img = "<img src='views/images/$p->postImage' width='800' height = '600' />";   //added /../
+                            echo $img;
+                        } else {
+                            echo "<img src='views/images/standard/_noproductimage.png' width='150' />" . PHP_EOL;
+                        }
                     }
+                    ?><h6><?php echo$p->publishedAt . PHP_EOL; ?></h6>
+                    <hr style="height:1px;border-width:0;color:gray;background-color:gray"><?php
                 }
-                ?><h6><?php echo$p->publishedAt . PHP_EOL;?></h6>
-                <hr style="height:1px;border-width:0;color:gray;background-color:gray"><?php
-            }
             }
             ?> 
 
