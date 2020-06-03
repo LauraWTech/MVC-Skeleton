@@ -28,13 +28,14 @@
     }
 
     .newPost{
-        text-align: centre;
+        text-align: right;
+        float: right;
     }
 
-    h1 {
-        text-align: centre;
+    .header {
+        text-align: right;
         padding:40px;
-        color: white;
+        color: black;
         padding-top: 60px;
     }
     /*    * {
@@ -52,7 +53,7 @@
         /* The image used */
         background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1711.jpg");
 
-        min-height: 900px;
+        min-height: 1000px;
 
         /* Center and scale the image nicely */
         background-position: center;
@@ -62,28 +63,27 @@
     }
 
     /* Add styles to the form container */
-    .container{
+    .containerNewPost{
         position: absolute;
         right: 0;
-        margin: 20px;
-        max-width: 300px;
-        width: 25%;
-        padding: 12px;
+        margin: 30px;
+        max-width: 400px;
+        padding: 15px;
         background-color: white;
         opacity: 0.9;
         text-align: left;
     }
 
     /* Full-width input fields */
-    input[type=text], input[type=password] {
-        width: 20%;
+    input[type=text], input[type=textarea],input[type=password] {
+        width: 100%;
         padding: 15px;
         margin: 5px 0 22px 0;
         border: none;
         background: #f1f1f1;
     }
 
-    input[type=text]:focus, input[type=password]:focus {
+    input[type=text]:focus, input[type=textarea], input[type=password]:focus {
         background-color: #ddd;
         outline: none;
     }
@@ -100,7 +100,7 @@
     }
 
     .categoryID-selected {
-        background-color: DodgerBlue;
+        background-color: lightgrey;
     }
 
     /*style the arrow inside the select element:*/
@@ -193,7 +193,7 @@
         /*style items (options):*/
         .categoryID {
             position: absolute;
-            background-color: #02C39A;
+            background-color: #002C39A;
             top: 100%;
             left: 0;
             right: 0;
@@ -206,10 +206,10 @@
         }
 
         .categoryID:hover, .same-as-selected {
-            background-color: #00A896;
+            background-color: #F0F3BD;
         }
         .button {
-            background-color: #00A896;
+            background-color: #F0F3BD;
             color: white;
             padding: 15px 12px;
             border: none;
@@ -220,61 +220,54 @@
 
         .button:hover {
             opacity: 5;
-            background-color: #F0F3BD; 
+            background-color: #02C39A; 
         }
 
         /* Set a style for the submit button */
         .postButton {
-            background-color: #00A896;
+            background-color: #F0F3BD;
             color: black;
             padding: 15px 12px;
             border: none;
             cursor: pointer;
-            width: 30%;
-            opacity: 0.9;
+            width: 100%;
+            opacity: 5;
         }
 
         .postButton:hover {
             opacity: 5;
-            background-color: #F0F3BD; 
+            background-color: #02C39A; 
         } 
     </style>
     <body>
         <div class="bg-img">
-            <div class="newPost">
-                <h1>Create New ADVNTR post</h1>
+            <div class="header">
+                <header><h2>Create New ADVNTR post</h2></header>
             </div>
-            <form action="" method="POST" class="container" enctype="multipart/form-data">
-                <div class="box">
-                    <h3>Please fill in boxes below to upload post onto your blog:</h3>
-                    <!--            <h2 class="login">Login</h2>
-                    
-                                <label for="email"><b>Blog Name</b></label>-->
+            <div class="containerNewPost">
+            <form action="" method="POST" class="containerNewPost" enctype="multipart/form-data">
+                    <label>Title</label>
+                    <input class="input" type="text" name="title" required autofocus><br>
+                    <label for="content">Content</label><br>
+                    <textarea id="content" name="content" rows="10" cols="30" required></textarea>
+                    <label for="categoryID">Choose a category:</label>
+                    <select name="categoryID" id="category">
+                        <option value="1">Canyoning</option>
+                        <option value="2">Climbing</option>
+                        <option value="3">Hiking</option>
+                        <option value="4">Wild Swimming</option>
+                        <option value="5">Fell Running</option>
+                        <option value="6">Kayaking</option>
+                        <option value="7">Cycling</option>
+                        <option value="8">Fishing</option>
+                        <option value="9">Coasteering</option>
+                        <option value="10">Camping</option>
+                        <option value="11">Family</option>
+                    </select><br>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+                    <input type="file" name="myUploader" class="postButton" required><br>
+                    <input class="postButton" type="submit" value="Add Post">
 
-                    <div class="container">
-
-                        <label>Title</label>
-                        <input class="input" type="text" name="title" required autofocus><br>
-                        <label for="content">Content</label><br>
-                        <textarea id="content" name="content" rows="10" cols="40" required></textarea><br><br>
-                        <label for="categoryID">Choose a category:</label>
-                        <select name="categoryID" id="category">
-                            <option value="1">Canyoning</option>
-                            <option value="2">Climbing</option>
-                            <option value="3">Hiking</option>
-                            <option value="4">Wild Swimming</option>
-                            <option value="5">Fell Running</option>
-                            <option value="6">Kayaking</option>
-                            <option value="7">Cycling</option>
-                            <option value="8">Fishing</option>
-                            <option value="9">Coasteering</option>
-                            <option value="10">Camping</option>
-                            <option value="11">Family</option>
-                        </select><br>
-                        <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-                        <input type="file" name="myUploader" class="button" required><br>
-                        <input class="postButton" type="submit" value="Add Post">
-                    </div>
                 </div> 
             </form>
         </div>

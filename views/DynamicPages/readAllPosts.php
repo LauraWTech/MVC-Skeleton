@@ -22,12 +22,13 @@
                 margin-top: 20px;
                 image-orientation: centre;
                 overflow: auto;
+                
             }
 
             .img {
 
                 padding: 0px;
-                position: centre;
+                position: left;
             }
             /* Footer */
             .footer {
@@ -82,7 +83,7 @@
                 ?><h6><?php echo$p->publishedAt . PHP_EOL;?></h6>
                 <hr style="height:1px;border-width:0;color:gray;background-color:gray"><?php
             }
-
+            }
             ?> 
 
             &nbsp;

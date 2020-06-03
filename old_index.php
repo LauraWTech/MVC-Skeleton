@@ -1,26 +1,10 @@
 <!DOCTYPE html>
-    <?php /*session_start()*/;?>
+    
 <html>
-  <!--  <head>
+    <head>
         <meta charset="UTF-8">
         <title>ADVNTR</title>
-    </head>-->
 
-   <?php/*
-    require_once('connection.php');
-
-    if (isset($_GET['controller']) && isset($_GET['action'])) {
-        $controller = $_GET['controller'];
-        $action = $_GET['action'];
-    } else {
-        $controller = 'pages';
-        $action = 'home';
-    }
-
-    require_once('views/layout.php');*/
-    ?>
-
-    <head>
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -61,19 +45,19 @@
             .posts {
                 float: left;
                 width: 75%;
-                padding: 40px;
+                padding: 50px;
                 overflow: auto;
             }
             /* Add a card effect for articles */
             .right {
                 float: right;
                 width: 25%;
-                padding: 40px;
+                padding: 50px;
                 overflow: auto;
             }
             /* image */
             .img {
-
+width: 100%;
                 padding: 0px;
                 position: centre;
             }
@@ -183,7 +167,7 @@
                 <div class="img">
                     <img src= "Image1.png" alt="image" style="width:100%;">
                 </div><br>
-                <h5>Founded by 4 women, Hannah, Aman, Jo and Laura from Get Into Tech, Sky. Tell us about you and your adventures!</h5>
+                <h5>Four women sharing Advntr – inspiring each other in the great outdoors. We met on a Women's Get Into Tech course and used our love of digital to set up this blog. We want to help you escape to nature and find where you belong!</h5>
                 <hr style="height:1px;border-width:0;color:gray;background-color:gray">
             </div>
 

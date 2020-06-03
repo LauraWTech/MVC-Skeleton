@@ -38,7 +38,7 @@
             .bg-img {
                 /* The image used */
                 background-image: url("http://localhost/MVC-Skeleton/views/images/HCH_1727.jpg");
-                min-height: 1200px;
+                min-height: 1400px;
 
                 /* Center and scale the image nicely */
                 background-position: center;
